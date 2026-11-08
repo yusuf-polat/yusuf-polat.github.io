@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Blok Zinciri · Hesabı Sil / Delete Account</title>
+<style>
+body{margin:0;background:#120d2b;color:#e9e6ff;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:520px;margin:0 auto;padding:40px 20px}
+h1{color:#f5b443;font-size:26px;margin:0 0 8px}p{color:#d6d2f2}a{color:#8cc8ff}
+.card{background:#1c1540;border:1px solid #2e2760;border-radius:14px;padding:20px;margin-top:18px}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input{width:100%;box-sizing:border-box;padding:12px;border-radius:9px;border:1px solid #3b3380;background:#0d0a22;color:#fff;font-size:16px}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-weight:400}.check input{width:auto;margin-top:5px}
+button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:10px;background:#e5484d;color:#fff;font-weight:800;font-size:16px;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+#msg{margin-top:14px;font-weight:700}.ok{color:#7cff9e}.err{color:#ff8a8a}
+.muted{color:#9a94c4;font-size:14px}
+</style>
+</head>
+<body><main>
+<h1>Hesabı Sil · Delete Account</h1>
+<p>Blok Zinciri hesabını ve tüm verilerini kalıcı olarak siler: ilerleme, altın, kozmetikler, arkadaşlar, maç geçmişi, cihaz ve bildirim kayıtları. <b>Geri alınamaz.</b></p>
+<p class="muted">Permanently deletes your Blok Zinciri account and all its data. This cannot be undone. You can also do this in the game: Settings → Delete Account.</p>
+<form class="card" id="f" autocomplete="off">
+<label for="n">Kullanıcı adı · Username</label>
+<input id="n" name="n" required minlength="3" maxlength="16" autocapitalize="off" spellcheck="false">
+<label for="p">Şifre · Password</label>
+<input id="p" name="p" type="password" required minlength="6" maxlength="128">
+<label class="check"><input type="checkbox" id="c" required> <span>Hesabımın ve tüm verilerimin kalıcı olarak silineceğini anladım. · I understand my account and data will be permanently deleted.</span></label>
+<button id="b" type="submit">HESABIMI SİL · DELETE MY ACCOUNT</button>
+<div id="msg" role="status"></div>
+</form>
+<p class="muted">Şifreni hatırlamıyorsan oyunda cihazınla giriş yapıp Ayarlar → Hesabı Sil yolunu kullan ya da <a href="mailto:polatyusuf1331@gmail.com">bize yaz</a>. · Forgot your password? Use the in-game option or email us.</p>
+<p class="muted"><a href="privacy.html">Gizlilik Politikası · Privacy Policy</a></p>
+<script>
+document.getElementById('f').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  var b = document.getElementById('b'), m = document.getElementById('msg');
+  b.disabled = true; m.className = ''; m.textContent = '...';
+  try {
+    var r = await fetch('https://blokzinciri.epinara.com/account/delete-web', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ name: document.getElementById('n').value.trim(), pass: document.getElementById('p').value }) });
+    var j = await r.json().catch(function () { return {}; });
+    if (r.ok) { m.className = 'ok'; m.textContent = (j.ok || 'Silindi') + ' · Your account has been deleted.'; document.getElementById('f').reset(); return; }
+    m.className = 'err'; m.textContent = j.error || ('Hata ' + r.status);
+  } catch (x) { m.className = 'err'; m.textContent = 'Sunucuya ulaşılamadı · Server unreachable'; }
+  b.disabled = false;
+});
+</script>
+</main></body>
+</html>
