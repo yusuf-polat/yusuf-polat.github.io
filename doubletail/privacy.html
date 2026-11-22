@@ -15,7 +15,7 @@ hr{border:0;border-top:1px solid #2e2760;margin:40px 0}
 </head>
 <body><main>
 <h1>Doubletail — Gizlilik Politikası</h1>
-<p class="muted">Geliştirici: Deltalo · Son güncelleme: 8 Kasım 2026</p>
+<p class="muted">Geliştirici: Deltalo · Son güncelleme: 2026-11-23 Kasım 2026</p>
 
 <p>Bu politika, Doubletail mobil oyununun (com.deltalo.doubletail) hangi verileri neden işlediğini açıklar. Oyunda reklam yoktur ve verileriniz satılmaz.</p>
 
@@ -39,6 +39,12 @@ hr{border:0;border-top:1px solid #2e2760;margin:40px 0}
 <li><b>Cloudflare</b>: sunucu bağlantısını güvenli (TLS) iletmek için (<a href="https://www.cloudflare.com/privacypolicy/">gizlilik</a>).</li>
 </ul>
 <p>Bunların dışında hiçbir veri üçüncü kişilerle paylaşılmaz. Tüm bağlantılar şifrelidir (HTTPS/WSS).</p>
+
+<h2>Analiz</h2>
+<p>Oyunu geliştirmek için <strong>Google Analytics for Firebase</strong> kullanırız (başlayan/biten oyun veya bölüm sayısı, uygulama sürümü, cihaz türü, ülke gibi). Firebase bir uygulama örneği kimliği kullanır; cihaz bilgileri, IP'den türetilen yaklaşık konum ve uygulama etkileşimleri işlenebilir. Bu veriler kimliğinizi belirlemek için kullanılmaz.</p>
+
+<h2>İsteğe bağlı hesap bağlama</h2>
+<p>Oyun, Deltalo'nun yayınladığı eşlik eden bir uygulamadaki hesabınıza isteğe bağlı olarak bağlanabilir. Bağlantıyı siz eşlik eden uygulamadan başlatıp oyunda onaylamadıkça bu özellik için veri gönderilmez. Onayladıktan sonra oyun, Deltalo'nun kendi sunucusuna şifreli (HTTPS) bağlantıyla tek kullanımlık bağlantı kodunu, oyunun paket adını ve SDK sürümünü, oyunun oluşturduğu rastgele bir kurulum kimliğini (reklam kimliği veya donanım kimliği değildir), "512 bloğuna ulaşıldı" veya "dereceli maçta ilk 3" gibi oyun içi ilerleme olaylarını gönderir. Sunucu bunları bağlantıyı başlatan hesapla birlikte saklar, güvenlik ve sahtekârlığı önleme amacıyla isteklerin IP adresini kaydeder; bu verileri satmayız ve üçüncü kişilerle paylaşmayız. Bağlantıyı eşlik eden uygulamadan istediğiniz zaman kaldırabilirsiniz; sunucudaki verilerin silinmesi için bize e-posta gönderin.</p>
 
 <h2>Çocuklar</h2>
 <p>Oyun, yabancılarla sesli iletişime izin verdiği için 13 yaş altındaki çocuklara yönelik değildir. 13 yaş altı bir çocuğa ait bir hesap fark ederseniz bize yazın, hesabı sileriz.</p>
@@ -72,6 +78,17 @@ hr{border:0;border-top:1px solid #2e2760;margin:40px 0}
 <p>Voice chat is off by default; the microphone permission is requested only when you turn it on. Your voice is relayed in real time to nearby players in a match or to your party and is <b>never recorded or stored</b> on our servers. You can mute, block and report individual players. No audio is relayed between you and a player you blocked.</p>
 <h2>Third parties</h2>
 <p>Google Firebase Cloud Messaging (notifications) and Cloudflare (secure TLS transport). No other sharing. All connections are encrypted.</p>
+<h2>Analytics</h2>
+<p>We use <strong>Google Analytics for Firebase</strong> to understand how the game is played (for example how many games or levels are started and finished, app version, device type and country) so we can improve it.
+Firebase uses an app instance identifier and may process device information, approximate location derived from the IP address and app interactions. This data is not used to identify you personally.
+Learn more: <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>.</p>
+
+<h2>Optional account linking</h2>
+<p>The app can optionally be linked to your account in a companion app published by Deltalo. Nothing happens unless you start the link yourself from the companion app and confirm it in the game; until then the game sends no data for this feature.</p>
+<p>After you confirm, the game sends the following to Deltalo's own server over an encrypted (HTTPS) connection: a one-time link code, the game's package name and SDK version; a random install identifier created by the game (not your advertising ID or any hardware identifier); gameplay progress events such as "reached the 512 block" or "top 3 in a ranked match", with a random event ID.
+The server stores this together with the companion app account that started the link and records the IP address of requests for security and fraud prevention. We do not sell this data or share it with third parties.
+You can remove the link at any time from the companion app; clearing the game's storage or uninstalling it removes the link data on your device. To have the server-side link data deleted, email us at the address below.</p>
+
 <h2>Children</h2>
 <p>Because the game allows voice communication with other players, it is not directed at children under 13. Contact us if you believe a child under 13 has an account and we will delete it.</p>
 <h2>Your rights and account deletion</h2>
