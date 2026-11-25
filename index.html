@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DeltaLo | Mobil Oyun ve Uygulama Stüdyosu</title>
-<meta name="description" content="DeltaLo, Google Play için mobil oyunlar ve uygulamalar geliştiren bağımsız bir stüdyodur. Doubletail, Renk Atölyesi, Honey Loop, Fox Raid ve diğer yapımlarımızı keşfedin.">
+<meta name="description" content="DeltaLo, Google Play için mobil oyunlar ve uygulamalar geliştiren bağımsız bir stüdyodur. Doubletail, Bug Feast, Renk Atölyesi, RepCam ve diğer yapımlarımızı keşfedin.">
 <meta name="theme-color" content="#0F1E3D">
 <link rel="canonical" href="https://yusuf-polat.github.io/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -39,23 +39,43 @@ nav a:hover{color:#fff}
 .lang button{all:unset;cursor:pointer;color:#C9D3E6;font-size:13px;font-weight:600;padding:6px 11px}
 .lang button[aria-pressed=true]{background:#fff;color:var(--navy)}
 .lang button:focus-visible{outline:2px solid var(--acc2);outline-offset:-2px}
-.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-180px;bottom:-260px;width:760px;height:760px;background:url(assets/deltalo-mark-white.svg) center/contain no-repeat;opacity:.035;pointer-events:none}
-.hgrid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:96px 28px 104px;position:relative;z-index:1}
-.eye{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--acc2);margin-bottom:20px}
-h1{font-size:clamp(38px,5.2vw,62px);line-height:1.08;letter-spacing:-.025em;font-weight:700}
-.lead{font-size:19px;color:#C9D3E6;margin-top:24px;max-width:33em}
+.hero{background:radial-gradient(900px 520px at 78% 18%,rgba(47,107,255,.32),transparent 62%),radial-gradient(700px 480px at 6% 100%,rgba(64,214,170,.14),transparent 60%),var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,#000 20%,transparent 75%);z-index:-1;pointer-events:none}
+.hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:88px 28px 96px;position:relative;min-height:640px}
+.badge{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#DCE6FB;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px 7px 12px;margin-bottom:26px;animation:fade .7s ease both}
+.dot{width:8px;height:8px;border-radius:50%;background:#3DDC97;box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,151,.55)}70%{box-shadow:0 0 0 9px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+h1{font-size:clamp(38px,4.6vw,58px);line-height:1.04;letter-spacing:-.035em;font-weight:800;animation:fade .7s .08s ease both}
+h1 em{font-style:normal;background:linear-gradient(92deg,#8FB3FF 0%,#7CE7C4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:#C9D3E6;margin-top:24px;max-width:34em;animation:fade .7s .16s ease both}
 .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:9px;font-weight:600;font-size:16px;text-decoration:none;transition:background .15s,color .15s,border-color .15s}
+.hcopy .cta{animation:fade .7s .24s ease both}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none;transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s}
 .btn svg{width:19px;height:19px}
-.pri{background:#fff;color:var(--navy)}
-.pri:hover{background:#DCE6FB}
-.ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
-.ghost:hover{border-color:#fff}
-.delta{display:flex;flex-direction:column;align-items:center;gap:14px}
-.delta .row{display:flex;gap:14px}
-.delta img{width:clamp(62px,7.6vw,104px);height:auto;border-radius:22%;box-shadow:0 14px 34px rgba(0,0,0,.34);animation:up .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--d)*70ms)}
-@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.btn .arr{width:18px;height:18px;transition:transform .15s}
+.pri{background:#fff;color:var(--navy);box-shadow:0 10px 30px rgba(143,179,255,.25)}
+.pri:hover{background:#E9F0FF;transform:translateY(-1px)}
+.pri:hover .arr{transform:translateX(3px)}
+.ghost{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.03)}
+.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.trust{display:flex;align-items:center;gap:16px;margin-top:40px;animation:fade .7s .32s ease both}
+.av{display:flex;flex:none}
+.av img{width:40px;height:40px;border-radius:11px;border:2px solid var(--navy);margin-left:-10px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.av img:first-child{margin-left:0}
+.trust p{display:flex;flex-direction:column;line-height:1.35}
+.trust b{font-size:15px;font-weight:700}
+.trust span{font-size:14px;color:#A9B6CE}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.wall{position:relative;align-self:stretch;min-height:640px;margin:-88px min(-28px,calc((1180px - 100vw)/2 - 28px)) -96px 0;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 84%,transparent)}
+.wall::before,.wall::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}.wall::before{left:0;background:linear-gradient(90deg,var(--navy),rgba(15,30,61,0))}.wall::after{right:0;width:60px;background:linear-gradient(270deg,rgba(15,30,61,.9),rgba(15,30,61,0))}
+.tilt{position:absolute;inset:-60px -40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;transform:rotate(-9deg) translateX(10px)}
+.col{overflow:hidden}
+.track{display:flex;flex-direction:column;gap:20px;animation:roll 46s linear infinite}
+.c2 .track{animation-duration:54s;animation-direction:reverse}
+.c3 .track{animation-duration:50s}
+.wall:hover .track{animation-play-state:paused}
+.track img{width:100%;max-width:140px;aspect-ratio:1;height:auto;margin:0 auto;border-radius:26%;box-shadow:0 18px 40px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06)}
+@keyframes roll{from{transform:translateY(0)}to{transform:translateY(calc(-50% - 10px))}}
 .facts{background:var(--deep);color:#fff}
 .fgrid{display:grid;grid-template-columns:repeat(4,1fr)}
 .fact{padding:30px 28px;border-left:1px solid rgba(255,255,255,.09)}
@@ -96,6 +116,7 @@ h2{font-size:clamp(30px,3.6vw,42px);line-height:1.15;letter-spacing:-.02em;font-
 .lnk:hover{color:var(--acc)}
 .sub{font-size:14px;color:var(--mute);text-decoration:none}
 .sub:hover{color:var(--navy);text-decoration:underline}
+.head.apps{margin:96px 0 0}
 .app{display:flex;align-items:center;gap:22px;border:1px solid var(--line);border-radius:14px;padding:24px 26px;background:#fff;margin-top:28px}
 .app img{width:72px;height:72px;border-radius:16px;flex:none}
 .app div{flex:1;min-width:0}
@@ -123,9 +144,9 @@ footer li{margin:8px 0}
 footer a{text-decoration:none}
 footer a:hover{color:#fff}
 .legal{margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
-@media (max-width:980px){.hgrid{grid-template-columns:1fr;padding:64px 28px 72px;gap:48px}.delta img{width:clamp(62px,15vw,104px)}.grid{grid-template-columns:repeat(2,1fr)}.feat{grid-template-columns:1fr}.feat img{aspect-ratio:1024/500;height:auto}.steps{grid-template-columns:1fr;gap:32px}.cgrid{grid-template-columns:1fr;gap:36px}.fg{grid-template-columns:1fr 1fr}section.s{padding:72px 0}}
+@media (max-width:980px){.hgrid{grid-template-columns:1fr;padding:64px 28px 0;gap:36px;min-height:0}.wall{min-height:0;height:340px;align-self:auto;margin:0 -28px}.tilt{inset:-40px 10px}.track img{max-width:110px}.grid{grid-template-columns:repeat(2,1fr)}.feat{grid-template-columns:1fr}.feat img{aspect-ratio:1024/500;height:auto}.steps{grid-template-columns:1fr;gap:32px}.cgrid{grid-template-columns:1fr;gap:36px}.fg{grid-template-columns:1fr 1fr}section.s{padding:72px 0}}
 @media (max-width:640px){body{font-size:16px}.wrap{padding-left:20px;padding-right:20px}nav a:not(.keep){display:none}.bar{gap:16px}.logo img{height:34px}.grid{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}.fact{padding:22px 0 22px 18px}.fact:nth-child(odd){border-left:0;padding-left:0}.fact:nth-child(n+3){border-top:1px solid rgba(255,255,255,.09)}.ftxt{padding:28px 24px}.app{flex-wrap:wrap}.app div{flex-basis:60%}.app .lnk{width:100%}.cl a{flex-direction:column;gap:2px}.cl small{text-align:left}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.delta img{animation:none}.game{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track,.dot,.badge,h1,.lead,.hcopy .cta,.trust{animation:none}.game{transition:none}}
 .cta .soon{display:inline-flex;align-items:center}
 .soon{display:inline-block;font-size:.84rem;font-weight:600;color:#0B6B55;background:#E3F5EE;border-radius:999px;padding:.35rem .8rem}
 </style>
@@ -134,26 +155,27 @@ footer a:hover{color:#fff}
 <a class="skip" href="#main" data-en="Skip to content">İçeriğe geç</a>
 <header><div class="wrap bar">
   <a class="logo" href="#top" aria-label="DeltaLo"><img src="assets/deltalo-logo-white.svg" alt="DeltaLo" width="126" height="40"></a>
-  <nav aria-label="Menü"><a class="keep" href="#oyunlar" data-en="Games">Oyunlar</a><a href="#studyo" data-en="Studio">Stüdyo</a><a href="#iletisim" data-en="Contact">İletişim</a></nav>
+  <nav aria-label="Menü"><a class="keep" href="#oyunlar" data-en="Games">Oyunlar</a><a href="#uygulamalar" data-en="Apps">Uygulamalar</a><a href="#studyo" data-en="Studio">Stüdyo</a><a href="#iletisim" data-en="Contact">İletişim</a></nav>
   <div class="lang" role="group" aria-label="Dil / Language"><button type="button" data-l="tr" aria-pressed="true">TR</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
 </div></header>
 
 <main id="main">
 <div class="hero" id="top"><div class="wrap hgrid">
-  <div>
-    <p class="eye" data-en="Mobile games and apps studio">Mobil oyun ve uygulama stüdyosu</p>
-    <h1 data-en="Games for short breaks that stay with you.">Kısa molalar için, uzun süre akılda kalan oyunlar.</h1>
-    <p class="lead" data-en="DeltaLo is an independent studio making mobile games that are easy to start and rewarding to master, along with apps that simplify everyday tasks.">DeltaLo; kolayca başlanan, ustalaşması keyifli mobil oyunlar ve günlük işleri kolaylaştıran uygulamalar geliştiren bağımsız bir stüdyodur.</p>
-    <div class="cta"><a class="btn pri" href="#oyunlar"><span data-en="Explore our games">Oyunları keşfet</span></a><a class="btn ghost" href="https://play.google.com/store/apps/dev?id=5848190743807790961" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m17.2 15.4-3.4-3.4 3.4-3.4 3.9 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#4285F4" d="M13.8 12 3.6 22.2c.3.2.8.2 1.3-.1l12.3-6.7z"/><path fill="#EA4335" d="M13.8 12 17.2 8.6 4.9 1.9c-.5-.3-1-.3-1.3-.1z"/></svg><span data-en="Our Google Play page">Google Play sayfamız</span></a></div>
+  <div class="hcopy">
+    <p class="badge"><span class="dot"></span><span data-en="16 titles live on Google Play">Google Play&#x27;de 16 yapım yayında</span></p>
+    <h1 data-en="Games for short breaks, &lt;em&gt;apps for every day.&lt;/em&gt;" data-html>Kısa molalar için oyunlar, <em>her gün işe yarayan uygulamalar.</em></h1>
+    <p class="lead" data-en="DeltaLo is an independent mobile studio. We design, build and publish games that are easy to start and hard to put down, plus apps that genuinely help — each with its own look, tested on real devices.">DeltaLo bağımsız bir mobil stüdyodur. Başlaması kolay, bırakması zor oyunlar ve gerçekten işe yarayan uygulamalar tasarlar, geliştirir ve yayınlarız; her biri kendine özgü tasarımla, gerçek cihazlarda test edilerek.</p>
+    <div class="cta"><a class="btn pri" href="#oyunlar"><span data-en="Explore our games">Oyunları keşfet</span><svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="https://play.google.com/store/apps/dev?id=5848190743807790961" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m17.2 15.4-3.4-3.4 3.4-3.4 3.9 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#4285F4" d="M13.8 12 3.6 22.2c.3.2.8.2 1.3-.1l12.3-6.7z"/><path fill="#EA4335" d="M13.8 12 17.2 8.6 4.9 1.9c-.5-.3-1-.3-1.3-.1z"/></svg><span data-en="Our Google Play page">Google Play sayfamız</span></a></div>
+    <div class="trust"><div class="av"><img src="assets/games/doubletail-icon.webp" alt="" width="40" height="40"><img src="assets/games/bugfeast-icon.webp" alt="" width="40" height="40"><img src="assets/games/repcam-icon.webp" alt="" width="40" height="40"><img src="assets/games/coloratelier-icon.webp" alt="" width="40" height="40"><img src="assets/games/fartrafters-icon.webp" alt="" width="40" height="40"></div><p><b data-en="13 games · 3 apps">13 oyun · 3 uygulama</b><span data-en="Played in 178 countries, up to 19 languages">178 ülkede, 19 dile kadar destek</span></p></div>
   </div>
-  <div class="delta" aria-hidden="true"><div class="row"><img src="assets/games/doubletail-icon.webp" alt="" width="104" height="104" style="--d:0"></div><div class="row"><img src="assets/games/honeyloop-icon.webp" alt="" width="104" height="104" style="--d:1"><img src="assets/games/teagarden-icon.webp" alt="" width="104" height="104" style="--d:2"></div><div class="row"><img src="assets/games/foxraid-icon.webp" alt="" width="104" height="104" style="--d:3"><img src="assets/games/catarena-icon.webp" alt="" width="104" height="104" style="--d:4"><img src="assets/games/skyforge-icon.webp" alt="" width="104" height="104" style="--d:5"><img src="assets/games/voxelpaint-icon.webp" alt="" width="104" height="104" style="--d:6"></div></div>
+  <div class="wall" aria-hidden="true"><div class="tilt"><div class="col c1"><div class="track"><img src="assets/games/doubletail-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/repcam-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/bugfeast-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/honeyloop-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/sumstones-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/foxraid-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/doubletail-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/repcam-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/bugfeast-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/honeyloop-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/sumstones-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/foxraid-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"></div></div><div class="col c2"><div class="track"><img src="assets/games/coloratelier-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/fartrafters-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/karakosk-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/teagarden-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/izlekazan-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/skyforge-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/coloratelier-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/fartrafters-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/karakosk-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/teagarden-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/izlekazan-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/skyforge-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"></div></div><div class="col c3"><div class="track"><img src="assets/games/bugrun-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/sonkayit-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/catarena-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/voxelpaint-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/ibanmatik-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/skyhop-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/cubeline-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/bugrun-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/sonkayit-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/catarena-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/voxelpaint-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/ibanmatik-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/skyhop-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"><img src="assets/games/cubeline-icon.webp" alt="" width="128" height="128" loading="eager" decoding="async"></div></div></div></div>
 </div></div>
 
 <div class="facts"><div class="wrap fgrid">
   <div class="fact"><b>13</b><span data-en="Games live">Yayında oyun</span></div>
-  <div class="fact"><b>2</b><span data-en="Mobile apps">Mobil uygulama</span></div>
-  <div class="fact"><b>170+</b><span data-en="Countries and regions">Ülke ve bölge</span></div>
-  <div class="fact"><b>Android</b><span data-en="On Google Play">Google Play&#x27;de</span></div>
+  <div class="fact"><b>3</b><span data-en="Mobile apps">Mobil uygulama</span></div>
+  <div class="fact"><b>178</b><span data-en="Countries and regions">Ülke ve bölge</span></div>
+  <div class="fact"><b>19</b><span data-en="Languages supported">Dil desteği</span></div>
 </div></div>
 
 <section class="s soft" id="oyunlar"><div class="wrap">
@@ -301,6 +323,12 @@ footer a:hover{color:#fff}
   <div class="acts"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.deltalo.cubeline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m17.2 15.4-3.4-3.4 3.4-3.4 3.9 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#4285F4" d="M13.8 12 3.6 22.2c.3.2.8.2 1.3-.1l12.3-6.7z"/><path fill="#EA4335" d="M13.8 12 17.2 8.6 4.9 1.9c-.5-.3-1-.3-1.3-.1z"/></svg>Google Play</a><a class="sub" href="cubeline/privacy.html"><span data-en="Privacy">Gizlilik</span></a></div>
 </article>
   </div>
+  <div class="head apps" id="uygulamalar"><p class="kick" data-en="Apps">Uygulamalar</p><h2 data-en="Apps that help every day">Her gün işe yarayan uygulamalar</h2></div>
+  <div class="app">
+    <img src="assets/games/repcam-icon.webp" alt="" width="72" height="72" loading="lazy">
+    <div><h3>RepCam</h3><p data-en="AI rep counter: your camera counts push-ups, squats and more. Challenge friends to live push-up duels.">Yapay zekâ tekrar sayacı: kameran şınav, squat ve daha fazlasını sayar. Arkadaşlarınla canlı şınav düellosu yap.</p></div>
+    <a class="lnk" href="https://play.google.com/store/apps/details?id=com.deltalo.repcam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m17.2 15.4-3.4-3.4 3.4-3.4 3.9 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#4285F4" d="M13.8 12 3.6 22.2c.3.2.8.2 1.3-.1l12.3-6.7z"/><path fill="#EA4335" d="M13.8 12 17.2 8.6 4.9 1.9c-.5-.3-1-.3-1.3-.1z"/></svg>Google Play</a>
+  </div>
   <div class="app">
     <img src="assets/games/ibanmatik-icon.webp" alt="" width="72" height="72" loading="lazy">
     <div><h3>IBAN Matik</h3><p data-en="An IBAN QR scanning, verification and management app. Offline and fast.">IBAN QR tarama, doğrulama ve yönetim uygulaması. Çevrimdışı ve hızlı.</p></div>
@@ -336,8 +364,8 @@ footer a:hover{color:#fff}
   <div class="fg">
     <div><img src="assets/deltalo-logo-white.svg" alt="DeltaLo" width="113" height="36" loading="lazy"><p data-en="Mobile games and apps studio">Mobil oyun ve uygulama stüdyosu</p></div>
     <div><h4 data-en="Games">Oyunlar</h4><ul><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.doubletail" target="_blank" rel="noopener">Doubletail</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.fartrafters" target="_blank" rel="noopener">Fart Rafters</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.bugfeast" target="_blank" rel="noopener">Bug Feast</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.bugrun" target="_blank" rel="noopener">Bug Run</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.honeyloop" target="_blank" rel="noopener">Honey Loop</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.teagarden" target="_blank" rel="noopener">Çay Bahçesi</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.foxraid" target="_blank" rel="noopener">Fox Raid</a></li></ul></div>
-    <div><h4 data-en="More titles">Diğer yapımlar</h4><ul><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.catarena" target="_blank" rel="noopener">Kedi Fight</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.skyforge" target="_blank" rel="noopener">Skyforge</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.voxelpaint" target="_blank" rel="noopener">Voxel Paint</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.skyhop" target="_blank" rel="noopener">Skyhop</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.cubeline" target="_blank" rel="noopener">Cubeline</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.coloratelier" target="_blank" rel="noopener" data-en="Color Atelier">Renk Atölyesi</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.ibanmatik" target="_blank" rel="noopener">IBAN Matik</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.izlekazan" target="_blank" rel="noopener">İzleKazan</a></li></ul></div>
-    <div><h4 data-en="Privacy policies">Gizlilik politikaları</h4><ul><li><a href="doubletail/privacy.html">Doubletail</a></li><li><a href="honeyloop/privacy.html">Honey Loop</a></li><li><a href="teagarden/privacy.html">Çay Bahçesi</a></li><li><a href="foxraid/privacy.html">Fox Raid</a></li><li><a href="catarena/privacy.html">Kedi Fight</a></li><li><a href="skyforge/privacy.html">Skyforge</a></li><li><a href="voxelpaint/privacy.html">Voxel Paint</a></li><li><a href="skyhop/privacy.html">Skyhop</a></li><li><a href="cubeline/privacy.html">Cubeline</a></li><li><a href="coloratelier/privacy.html">Renk Atölyesi</a></li><li><a href="bugrun/privacy.html">Bug Run</a></li><li><a href="bugfeast/privacy.html">Bug Feast</a></li><li><a href="karakosk/privacy.html">Kara Köşk</a></li><li><a href="fartrafters/privacy.html">Fart Rafters</a></li><li><a href="sonkayit/privacy.html">00:17 Son Kayıt</a></li><li><a href="sumstones/privacy.html">Sum Stones</a></li></ul></div>
+    <div><h4 data-en="More titles">Diğer yapımlar</h4><ul><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.catarena" target="_blank" rel="noopener">Kedi Fight</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.skyforge" target="_blank" rel="noopener">Skyforge</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.voxelpaint" target="_blank" rel="noopener">Voxel Paint</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.skyhop" target="_blank" rel="noopener">Skyhop</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.cubeline" target="_blank" rel="noopener">Cubeline</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.coloratelier" target="_blank" rel="noopener" data-en="Color Atelier">Renk Atölyesi</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.ibanmatik" target="_blank" rel="noopener">IBAN Matik</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.izlekazan" target="_blank" rel="noopener">İzleKazan</a></li><li><a href="https://play.google.com/store/apps/details?id=com.deltalo.repcam" target="_blank" rel="noopener">RepCam</a></li></ul></div>
+    <div><h4 data-en="Privacy policies">Gizlilik politikaları</h4><ul><li><a href="doubletail/privacy.html">Doubletail</a></li><li><a href="honeyloop/privacy.html">Honey Loop</a></li><li><a href="teagarden/privacy.html">Çay Bahçesi</a></li><li><a href="foxraid/privacy.html">Fox Raid</a></li><li><a href="catarena/privacy.html">Kedi Fight</a></li><li><a href="skyforge/privacy.html">Skyforge</a></li><li><a href="voxelpaint/privacy.html">Voxel Paint</a></li><li><a href="skyhop/privacy.html">Skyhop</a></li><li><a href="cubeline/privacy.html">Cubeline</a></li><li><a href="coloratelier/privacy.html">Renk Atölyesi</a></li><li><a href="bugrun/privacy.html">Bug Run</a></li><li><a href="bugfeast/privacy.html">Bug Feast</a></li><li><a href="karakosk/privacy.html">Kara Köşk</a></li><li><a href="fartrafters/privacy.html">Fart Rafters</a></li><li><a href="sonkayit/privacy.html">00:17 Son Kayıt</a></li><li><a href="sumstones/privacy.html">Sum Stones</a></li><li><a href="repcam/privacy.html">RepCam</a></li></ul></div>
   </div>
   <div class="legal"><span>© 2026 DeltaLo</span><span data-en="Google Play is a trademark of Google LLC.">Google Play, Google LLC&#x27;nin ticari markasıdır.</span></div>
 </div></footer>
@@ -345,11 +373,11 @@ footer a:hover{color:#fff}
 <script>
 (function(){
   var els=[].slice.call(document.querySelectorAll('[data-en]'));
-  els.forEach(function(e){e.dataset.tr=e.textContent});
+  els.forEach(function(e){e.dataset.tr=e.hasAttribute('data-html')?e.innerHTML:e.textContent});
   var hs=[].slice.call(document.querySelectorAll('[data-en-href]'));
   hs.forEach(function(a){a.dataset.trHref=a.getAttribute('href')});
   function set(l){
-    els.forEach(function(e){e.textContent=l==='en'?e.dataset.en:e.dataset.tr});
+    els.forEach(function(e){var v=l==='en'?e.dataset.en:e.dataset.tr;if(e.hasAttribute('data-html'))e.innerHTML=v;else e.textContent=v});
     document.documentElement.lang=l;
     hs.forEach(function(a){a.href=l==='en'?a.dataset.enHref:a.dataset.trHref});
     document.title=l==='en'?'DeltaLo | Mobile Games and Apps Studio':'DeltaLo | Mobil Oyun ve Uygulama Stüdyosu';
